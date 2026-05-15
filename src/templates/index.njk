@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./styles/output.css" rel="stylesheet">
     </head>
-    <body>
-        {% include "md_and_up_header.njk" %}
-        {% include "mobile_header.njk" %}
-        {% include "mobile_menu.njk" %}
+    <body class="relative overflow-scroll">
+{% include "md_and_up_header.njk" %}
+        <div id="mobile-head-menu-wrapper" class="fixed top-[0] w-full z-50">
+{% include "mobile_header.njk" %}
+{% include "mobile_menu.njk" %}
+        </div>
+{% include "mobile_hero.njk" %}
         <script src="./scripts/mobile_menu_toggle.js"></script>
     </body>
 </html>
