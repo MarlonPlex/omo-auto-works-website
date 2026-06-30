@@ -11,10 +11,9 @@
 {% include "mobile_header.njk" %}
 {% include "mobile_menu.njk" %}
         </div>
-{% include "mobile_hero.njk" %}
-{% include "md_and_up_hero.njk" %}
+{% include "hero.njk" %}
         <!--Contact details Bar-->
-        <div class="flex justify-evenly mt-auto lg:px-24 md:px-16 px-6">
+        <div class="bg-gray-200 flex justify-evenly mt-auto lg:px-24 md:px-16 px-6">
             <!-- Call Us -->
             <div class="flex flex-col items-center py-3">
                 <div class="flex items-center gap-1">
@@ -26,15 +25,15 @@
                     </p>
                 </div>
                 <div class="md:hidden">
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         (876) 863-0241
                     </p>
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         (876) 542-5969
                     </p>
                 </div>
                 <div class="hidden md:block">
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         (876) 863-0241 <b>OR</b> (876) 542-5969
                     </p>
                 </div>
@@ -47,25 +46,31 @@
                         <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
                     </svg>
 
-                    <p class="font-bold sm:text-sm text-xs uppercase tracking-wide text-black">
+                    <p class="font-bold sm:text-sm text-xs uppercase tracking-wide">
                         Visit Us
                     </p>
                 </div>
                 <div class="flex flex-col items-center md:hidden">
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         10 3/4 Mckinley Road,
                     </p>
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         Mandeville, Manchester
                     </p>
                 </div>
                 <div class="hidden md:block">
-                    <p class="font-thin mt-1 text-gray-900 sm:text-sm text-xs">
+                    <p class="font-normal mt-1 sm:text-sm text-xs">
                         10 3/4 Mckinley Road, Mandeville, Manchester.
                     </p>
                 </div>
             </div>
         </div>
+{% include "services.njk" %}
+{% include "our_work.njk" %}
+{% include "contact_section.njk" %}
+
         <script src="./scripts/mobile_menu_toggle.js"></script>
+        <script src="./scripts/services-carousel.js"></script>
+        <script src="./scripts/our-work-carousel.js"></script>
     </body>
 </html>

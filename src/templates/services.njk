@@ -1,0 +1,152 @@
+    {% set services = [
+      {
+        image: "./imgs/service-body-work.jpeg",
+        title: "Body Work",
+        description: "State-of-the-art diagnostic testing to identify and resolve performance issues quickly.",
+        link: "/services/engine-diagnostics"
+      },
+      {
+        image: "/images/oil-change.jpg",
+        title: "Oil & Filter Change",
+        description: "Full synthetic and conventional oil changes with multi-point inspection included.",
+        link: "/services/oil-change"
+      },
+      {
+        image: "/images/brake-service.jpg",
+        title: "Brake Service",
+        description: "Comprehensive.",
+        link: "/services/brake-service"
+      },
+      {
+        image: "/images/tire-rotation.jpg",
+        title: "Tire Rotation",
+        description: "Extend tyre life and maintain even wear with our professional rotation service.",
+        link: "/services/tire-rotation"
+      }
+    ] %}
+    <h1 class="font-bold text-center text-3xl pt-5">Services</h1>
+    {# Mobile Services Carousel Section #}
+    <!-- Mobile Services Carousel -->
+    <section class="px-4 py-5 md:hidden">
+
+      <div class="overflow-hidden">
+
+        {# Track #}
+        <div
+          id="services-track"
+          class="flex transition-transform duration-300 ease-in-out"
+          style="transform: translateX(0%)"
+        >
+          {% for service in services %}
+          <div class="w-full flex-shrink-0">
+            <article class="flex flex-col overflow-hidden h-full rounded-2xl bg-gray-200">
+
+              {# Image #}
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="{{ service.image }}"
+                  alt="{{ service.title }}"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+
+              {# Content #}
+              <div class="flex flex-col grow justify-between px-6 py-7 text-center">
+                <h2 class="mb-3 text-xl font-bold text-black">
+                  {{ service.title }}
+                </h2>
+                <p class="mb-6 text-sm leading-relaxed text-black">
+                  {{ service.description }}
+                </p>
+                <a
+                  href="{{ service.link }}"
+                  class="inline-block rounded-lg bg-neutral-500 px-10 py-3 text-sm font-bold text-white hover:bg-neutral-600 active:bg-neutral-700"
+                >
+                  Learn More
+                </a>
+              </div>
+
+            </article>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+      {# Controls #}
+      <div class="mt-6 flex items-center justify-between px-2">
+
+        {# Prev arrow #}
+        <button
+          id="services-prev"
+          aria-label="Previous service"
+          class="text-neutral-500 disabled:opacity-30"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {# Dots #}
+        <div id="services-dots" class="flex items-center gap-3" role="tablist">
+          {% for service in services %}
+          <button
+            role="tab"
+            aria-label="Go to slide {{ loop.index }}"
+            data-index="{{ loop.index0 }}"
+            class="h-4 w-4 rounded-full border-2 border-neutral-500 transition-colors duration-200 {% if loop.first %}bg-neutral-500 border-neutral-500{% else %}bg-transparent{% endif %}"
+          ></button>
+          {% endfor %}
+        </div>
+
+        {# Next arrow #}
+        <button
+          id="services-next"
+          aria-label="Next service"
+          class="text-neutral-500 disabled:opacity-30"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+      </div>
+
+    </section>
+
+    {# md+ Services Section #}
+    <!-- md+ Services Carousel-->
+    <section class="hidden md:flex flex-wrap justify-center gap-4 px-16 py-5">
+      {% for service in services %}
+        <div class="w-2xs max-w-2xs flex-shrink-0 px-2">
+          <article class="flex flex-col h-full overflow-hidden rounded-2xl bg-gray-200">
+
+            {# Image #}
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <img
+                src="{{ service.image }}"
+                alt="{{ service.title }}"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            {# Content #}
+            <div class="flex flex-col grow justify-between px-6 py-7 text-center">
+              <h2 class="mb-3 text-2xl font-bold text-black">
+                {{ service.title }}
+              </h2>
+              <p class="mb-6 text-sm leading-relaxed text-black">
+                {{ service.description }}
+              </p>
+              <a
+                href="{{ service.link }}"
+                class="inline-block rounded-lg bg-neutral-500 px-10 py-3 text-sm font-bold text-white hover:bg-neutral-600 active:bg-neutral-700"
+              >
+                Learn More
+              </a>
+            </div>
+
+          </article>
+        </div>
+      {% endfor %}
+    </section>
